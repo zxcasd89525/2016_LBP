@@ -1,0 +1,83 @@
+Magic 271485
+Revision Verdi_Q-2020.03
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 2153 216 1642 800 163 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/t107360216/Desktop/qiyou/2016_LBP/LBP.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 11362.500000
+cursor 5625.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 0
+; marker line index
+markerPos 13
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/t107360216/Desktop/qiyou/2016_LBP/LBP.fsdb"
+addSignal -h 15 /testfixture/LBP/clk
+addSignal -h 15 -holdScope reset
+addSignal -h 15 -holdScope n_state[2:0]
+addSignal -h 15 -holdScope c_state[2:0]
+addSignal -h 15 -holdScope gray_ready
+addSignal -h 15 -holdScope gray_req
+addSignal -h 15 -UNSIGNED -UDEC -holdScope gray_addr[13:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope gray_data[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope center_pixel[7:0]
+addSignal -h 15 -holdScope cnt[2:0]
+addSignal -h 15 -holdScope lbp_valid
+addSignal -h 15 -UNSIGNED -UDEC -holdScope lbp_addr[13:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope lbp_data[7:0]
+addSignal -h 15 -holdScope finish
+addGroup "G2"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/home/t107360216/Desktop/qiyou/2016_LBP/LBP.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/testfixture"
+
+SCOPE_LIST_BEGIN
+"/testfixture"
+"/testfixture/u_lbp_mem"
+"/testfixture/LBP"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+
